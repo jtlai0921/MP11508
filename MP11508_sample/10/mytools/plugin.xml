@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.eclipse.ui"
+            class="mytools.BrowserViewPart"
+            id="mytools.BrowserViewPart"
+            name="MY瀏覽器"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="mytools.GoogleSearchCommand"
+            id="mytools.GoogleSearchCommand"
+            name="Google搜尋">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:#CompilationUnitEditorContext?after=additions">
+         <command
+               commandId="mytools.GoogleSearchCommand"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+</plugin>
